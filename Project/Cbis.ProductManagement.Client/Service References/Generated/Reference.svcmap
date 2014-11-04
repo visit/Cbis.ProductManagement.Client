@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="4590a3ec-b8df-4eed-b5ba-ddeea0f011c7" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:44300/InformationSystemManagement.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="InformationSystemManagement.wsdl" MetadataType="Wsdl" ID="2d91d832-e1c9-47a0-8d87-c01837dae321" SourceId="1" SourceUrl="http://localhost:44300/InformationSystemManagement.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="InformationSystemManagement2.xsd" MetadataType="Schema" ID="180bcaa0-d7f0-4525-8deb-579e31571a8e" SourceId="1" SourceUrl="http://localhost:44300/InformationSystemManagement.svc?xsd=xsd4" />
+    <MetadataFile FileName="InformationSystemManagement21.xsd" MetadataType="Schema" ID="60ed31f6-9165-4d87-9356-c4b22b8477be" SourceId="1" SourceUrl="http://localhost:44300/InformationSystemManagement.svc?xsd=xsd3" />
+    <MetadataFile FileName="InformationSystemManagement.disco" MetadataType="Disco" ID="47cb7d0e-bd39-4c9d-9d9c-931696cf9110" SourceId="1" SourceUrl="http://localhost:44300/InformationSystemManagement.svc?disco" />
+    <MetadataFile FileName="InformationSystemManagement1.wsdl" MetadataType="Wsdl" ID="cdb77105-7065-4970-851f-a291cc600842" SourceId="1" SourceUrl="http://localhost:44300/InformationSystemManagement.svc?wsdl" />
+    <MetadataFile FileName="InformationSystemManagement22.xsd" MetadataType="Schema" ID="ff544d73-348f-4eea-b4ee-aa30ea69c9dd" SourceId="1" SourceUrl="http://localhost:44300/InformationSystemManagement.svc?xsd=xsd0" />
+    <MetadataFile FileName="InformationSystemManagement23.xsd" MetadataType="Schema" ID="a56eecb1-4005-4594-9543-e830e0847719" SourceId="1" SourceUrl="http://localhost:44300/InformationSystemManagement.svc?xsd=xsd2" />
+    <MetadataFile FileName="InformationSystemManagement24.xsd" MetadataType="Schema" ID="b178ff2b-2a49-4818-98ec-5596632cdfe1" SourceId="1" SourceUrl="http://localhost:44300/InformationSystemManagement.svc?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

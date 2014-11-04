@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30501.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cbis.ProductManagement.Client", "Project\Cbis.ProductManagement.Client\Cbis.ProductManagement.Client.csproj", "{EF2283C0-F544-47B1-B122-C50EA593544E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cbis.ProductManagement.Client_Test", "Project\Cbis.ProductManagement.Client_Test\Cbis.ProductManagement.Client_Test.csproj", "{897EB705-A93E-42A6-A6B8-F571B7C877BF}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 3
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://tfs.internal.visit.com:8080/tfs/defaultcollection
+		SccProjectUniqueName0 = Project\\Cbis.ProductManagement.Client\\Cbis.ProductManagement.Client.csproj
+		SccProjectName0 = Project/Cbis.ProductManagement.Client
+		SccLocalPath0 = Project\\Cbis.ProductManagement.Client
+		SccLocalPath1 = .
+		SccProjectUniqueName2 = Project\\Cbis.ProductManagement.Client_Test\\Cbis.ProductManagement.Client_Test.csproj
+		SccProjectName2 = Project/Cbis.ProductManagement.Client_Test
+		SccLocalPath2 = Project\\Cbis.ProductManagement.Client_Test
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EF2283C0-F544-47B1-B122-C50EA593544E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF2283C0-F544-47B1-B122-C50EA593544E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF2283C0-F544-47B1-B122-C50EA593544E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF2283C0-F544-47B1-B122-C50EA593544E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{897EB705-A93E-42A6-A6B8-F571B7C877BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{897EB705-A93E-42A6-A6B8-F571B7C877BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{897EB705-A93E-42A6-A6B8-F571B7C877BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{897EB705-A93E-42A6-A6B8-F571B7C877BF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

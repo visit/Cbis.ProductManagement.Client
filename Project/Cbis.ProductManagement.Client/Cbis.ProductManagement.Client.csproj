@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{EF2283C0-F544-47B1-B122-C50EA593544E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Cbis.ProductManagement.Client</RootNamespace>
+    <AssemblyName>Cbis.ProductManagement.Client</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <DocumentationFile>bin\Debug\Cbis.ProductManagement.Client.XML</DocumentationFile>
+    <NoWarn>1591</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Release\Cbis.ProductManagement.Client.XML</DocumentationFile>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <NoWarn>1591</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BoolAttributesFactory.cs" />
+    <Compile Include="Product.cs" />
+    <Compile Include="ProductReference.cs" />
+    <Compile Include="Category.cs" />
+    <Compile Include="CbisSupplierManagementClient.cs" />
+    <Compile Include="DayOfWeekMask.cs" />
+    <Compile Include="Generated\OrganizationReference.cs" />
+    <Compile Include="Generated\ProductReference.cs" />
+    <Compile Include="ImageData.cs" />
+    <Compile Include="InformationData.cs" />
+    <Compile Include="InformationDataBool.cs" />
+    <Compile Include="InformationDataDouble.cs" />
+    <Compile Include="InformationDataFactory.cs" />
+    <Compile Include="InformationDataInt.cs" />
+    <Compile Include="InformationDataString.cs" />
+    <Compile Include="Occasion.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReferenceName.cs" />
+    <Compile Include="Service References\Generated\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Cbis.ProductManagement.Client.nuspec" />
+    <None Include="Service References\Generated\Cbis.ProductManagement.Client.Generated.Category.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Generated\Cbis.ProductManagement.Client.Generated.OrganizationReference.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Generated\Cbis.ProductManagement.Client.Generated.Product.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Generated\Cbis.ProductManagement.Client.Generated.ProductCallbackReference.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\Generated\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Generated\Cbis.ProductManagement.Client.Generated.ProductReference.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Generated\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Generated\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Generated\InformationSystemManagement.wsdl" />
+    <None Include="Service References\Generated\InformationSystemManagement1.wsdl" />
+    <None Include="Service References\Generated\InformationSystemManagement12.wsdl" />
+    <None Include="Service References\Generated\InformationSystemManagement2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Generated\InformationSystemManagement21.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Generated\InformationSystemManagement22.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Generated\InformationSystemManagement23.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Generated\InformationSystemManagement24.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Generated\InformationSystemManagement41.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Generated\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Generated\InformationSystemManagement.disco" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

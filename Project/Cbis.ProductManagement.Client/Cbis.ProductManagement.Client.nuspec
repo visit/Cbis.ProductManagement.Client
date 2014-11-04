@@ -1,0 +1,19 @@
+﻿<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>Cbis.ProductManagement.Client</id>
+    <version>0.1.0</version>
+    <title>Cbis.ProductManagement.Client</title>
+    <authors>Visit Technology Group</authors>
+    <owners>Visit Technology Group</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Library for helping you consume the Cbis management service</description>
+    <copyright>Visit Technology Group</copyright>
+    <tags>cbis supplier product</tags>
+  </metadata>
+	<files>
+		<file src="bin\release\Cbis.ProductManagement.Client.dll" target="lib\net40" />
+		<file src="bin\release\Cbis.ProductManagement.Client.pdb" target="lib\net40" />
+    <file src="bin\release\Cbis.ProductManagement.Client.xml" target="lib\net40" />
+  </files>
+</package>

@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/Cbis.ExternalApi.Contract" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Cbis.ExternalApi.Contract" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:44300/InformationSystemManagement.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="OrganizationReference">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ReferenceName">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OrganizationReference" nillable="true" type="tns:OrganizationReference" />
+  <xs:complexType name="ReferenceName">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="LocalName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SubSystem" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ReferenceName" nillable="true" type="tns:ReferenceName" />
+  <xs:complexType name="ArrayOfInformationData">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="InformationData" nillable="true" type="tns:InformationData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfInformationData" nillable="true" type="tns:ArrayOfInformationData" />
+  <xs:complexType name="InformationData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AttributeId" type="xs:int" />
+      <xs:element minOccurs="0" name="Culture" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="InformationData" nillable="true" type="tns:InformationData" />
+  <xs:complexType name="InformationDataInt">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:InformationData">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Value" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="InformationDataInt" nillable="true" type="tns:InformationDataInt" />
+  <xs:complexType name="InformationDataDouble">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:InformationData">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Value" type="xs:double" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="InformationDataDouble" nillable="true" type="tns:InformationDataDouble" />
+  <xs:complexType name="InformationDataString">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:InformationData">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Value" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="InformationDataString" nillable="true" type="tns:InformationDataString" />
+  <xs:complexType name="InformationDataBoolean">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:InformationData">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Value" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="InformationDataBoolean" nillable="true" type="tns:InformationDataBoolean" />
+  <xs:complexType name="ArrayOfMediaInformationData">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MediaInformationData" nillable="true" type="tns:MediaInformationData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMediaInformationData" nillable="true" type="tns:ArrayOfMediaInformationData" />
+  <xs:complexType name="MediaInformationData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Location" nillable="true" type="xs:anyURI" />
+      <xs:element minOccurs="0" name="MediaType" type="tns:MediaType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MediaInformationData" nillable="true" type="tns:MediaInformationData" />
+  <xs:simpleType name="MediaType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Image" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="MediaType" nillable="true" type="tns:MediaType" />
+  <xs:complexType name="ArrayOfOccasionInformationData">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="OccasionInformationData" nillable="true" type="tns:OccasionInformationData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfOccasionInformationData" nillable="true" type="tns:ArrayOfOccasionInformationData" />
+  <xs:complexType name="OccasionInformationData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="EndDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="EndTime" nillable="true" type="ser:duration" />
+      <xs:element minOccurs="0" name="StartDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="StartTime" nillable="true" type="ser:duration" />
+      <xs:element minOccurs="0" name="ValidDays" type="tns:WeekDays" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OccasionInformationData" nillable="true" type="tns:OccasionInformationData" />
+  <xs:simpleType name="WeekDays">
+    <xs:list>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="Exact">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">0</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="Monday">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="Tuesday">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="Wednesday">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">4</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="Thursday">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">8</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="Friday">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">16</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="Saturday">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">32</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="Sunday">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">64</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:list>
+  </xs:simpleType>
+  <xs:element name="WeekDays" nillable="true" type="tns:WeekDays" />
+  <xs:complexType name="ProductCallbackReference">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CbisProductId" nillable="true" type="tns:ReferenceName" />
+      <xs:element minOccurs="0" name="ProductReference" nillable="true" type="tns:ReferenceName" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProductCallbackReference" nillable="true" type="tns:ProductCallbackReference" />
+  <xs:complexType name="Product">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="InformationData" nillable="true" type="tns:ArrayOfInformationData" />
+      <xs:element minOccurs="0" name="MediaData" nillable="true" type="tns:ArrayOfMediaInformationData" />
+      <xs:element minOccurs="0" name="OccasionData" nillable="true" type="tns:ArrayOfOccasionInformationData" />
+      <xs:element minOccurs="0" name="Reference" nillable="true" type="tns:ReferenceName" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Product" nillable="true" type="tns:Product" />
+  <xs:complexType name="ArrayOfProductReference">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ProductReference" nillable="true" type="tns:ProductReference" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfProductReference" nillable="true" type="tns:ArrayOfProductReference" />
+  <xs:complexType name="ProductReference">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ReferenceNames" nillable="true" type="tns:ArrayOfReferenceName" />
+      <xs:element minOccurs="0" name="SystemName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProductReference" nillable="true" type="tns:ProductReference" />
+  <xs:complexType name="ArrayOfReferenceName">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ReferenceName" nillable="true" type="tns:ReferenceName" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfReferenceName" nillable="true" type="tns:ArrayOfReferenceName" />
+  <xs:complexType name="ArrayOfCategory">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Category" nillable="true" type="tns:Category" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCategory" nillable="true" type="tns:ArrayOfCategory" />
+  <xs:complexType name="Category">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Category" nillable="true" type="tns:Category" />
+</xs:schema>
