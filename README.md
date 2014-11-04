@@ -1,0 +1,2 @@
+Cbis.ProductManagement.Client
+=============================
