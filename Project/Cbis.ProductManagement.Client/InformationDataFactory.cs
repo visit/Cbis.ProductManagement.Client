@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Cbis.ProductManagement.Client
 {
@@ -384,6 +381,144 @@ namespace Cbis.ProductManagement.Client
             }
 
             return new InformationDataInt(CultureInfo.InvariantCulture, 151, rating);
+        }
+
+        /// <summary>
+        /// Gives an indication of the starting price for a product an some currency.
+        /// </summary>
+        /// <param name="priceFrom">The price from.</param>
+        /// <returns></returns>
+        /// <exception cref="System.ArgumentOutOfRangeException">priceFrom was less than zero.</exception>
+        public InformationData CreatePriceFrom(int priceFrom)
+        {
+            if (priceFrom < 0)
+            {
+                throw new ArgumentOutOfRangeException("priceFrom");
+            }
+
+            return new InformationDataInt(CultureInfo.InvariantCulture, 141, priceFrom);
+        }
+
+        /// <summary>
+        /// Creates the season text.
+        /// </summary>
+        /// <param name="seasonText">The season text.</param>
+        /// <param name="language">The language.</param>
+        /// <returns></returns>
+        /// <exception cref="System.ArgumentNullException">seasonText was null or empty</exception>
+        public InformationData CreateSeasonText(string seasonText, CultureInfo language)
+        {
+            if (string.IsNullOrEmpty(seasonText))
+            {
+                throw new ArgumentNullException("seasonText");
+            }
+
+            return new InformationDataString(language, 922, seasonText);
+        }
+
+        /// <summary>
+        /// Creates the document link text1. A text that should be shown and redirect the browser to the <seealso cref="CreateDocumentLink1" /> configured value.
+        /// </summary>
+        /// <param name="textIndex">Index of the text 1..10</param>
+        /// <param name="text">The text.</param>
+        /// <param name="language">The language.</param>
+        /// <returns></returns>
+        /// <exception cref="System.ArgumentNullException">text was null or empty</exception>
+        /// <exception cref="System.ArgumentOutOfRangeException">textIndex;Must be between 1..10</exception>
+        public InformationData CreateDocumentLinkText(int textIndex, string text, CultureInfo language)
+        {
+            if(string.IsNullOrEmpty(text))
+            {
+                throw new ArgumentNullException("text");
+            }
+
+            switch (textIndex)
+            {
+                case 1:
+                    return new InformationDataString(language, 931, text);
+
+                case 2:
+                    return new InformationDataString(language, 933, text);
+
+                case 3:
+                    return new InformationDataString(language, 935, text);
+
+                case 4:
+                    return new InformationDataString(language, 937, text);
+
+                case 5:
+                    return new InformationDataString(language, 939, text);
+
+                case 6:
+                    return new InformationDataString(language, 941, text);
+
+                case 7:
+                    return new InformationDataString(language, 943, text);
+
+                case 8:
+                    return new InformationDataString(language, 945, text);
+
+                case 9:
+                    return new InformationDataString(language, 947, text);
+
+                case 10:
+                    return new InformationDataString(language, 949, text);
+
+                default:
+                    throw new ArgumentOutOfRangeException("textIndex", textIndex, "Must be between 1..10");
+            }
+        }
+
+        /// <summary>
+        /// Creates the document link. A link that should be targeted when clicking the text defined in <see cref="CreateDocumentLinkText"/> with the same index.
+        /// </summary>
+        /// <param name="linkIndex">Index of the link 1..10</param>
+        /// <param name="link">The link.</param>
+        /// <param name="language">The language.</param>
+        /// <returns></returns>
+        /// <exception cref="System.ArgumentNullException">The link was null</exception>
+        public InformationData CreateDocumentLink1(int linkIndex, Uri link, CultureInfo language)
+        {
+            if(link == null)
+            {
+                throw new ArgumentNullException("link");
+            }
+
+            switch (linkIndex)
+            {
+                case 1:
+                    return new InformationDataString(language, 932, link.ToString());
+
+                case 2:
+                    return new InformationDataString(language, 934, link.ToString());
+
+                case 3:
+                    return new InformationDataString(language, 936, link.ToString());
+
+                case 4:
+                    return new InformationDataString(language, 938, link.ToString());
+
+                case 5:
+                    return new InformationDataString(language, 940, link.ToString());
+
+                case 6:
+                    return new InformationDataString(language, 942, link.ToString());
+
+                case 7:
+                    return new InformationDataString(language, 944, link.ToString());
+
+                case 8:
+                    return new InformationDataString(language, 946, link.ToString());
+
+                case 9:
+                    return new InformationDataString(language, 948, link.ToString());
+
+                case 10:
+                    return new InformationDataString(language, 950, link.ToString());
+
+                default:
+                    throw new ArgumentOutOfRangeException("linkIndex", linkIndex, "Must be between 1..10");
+            }
         }
     }
 }
