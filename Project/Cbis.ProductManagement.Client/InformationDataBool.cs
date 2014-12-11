@@ -3,6 +3,9 @@ using System.Globalization;
 
 namespace Cbis.ProductManagement.Client
 {
+    /// <summary>
+    /// Represents a bool data value
+    /// </summary>
     public class InformationDataBool : InformationData
     {
         public InformationDataBool(CultureInfo language, int attributeId, bool value)

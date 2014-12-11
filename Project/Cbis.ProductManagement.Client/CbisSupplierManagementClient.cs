@@ -55,7 +55,7 @@ namespace Cbis.ProductManagement.Client
         /// <param name="endpointConfigurationName">Name of the endpoint configuration.</param>
         /// <param name="userName">Name of the user.</param>
         /// <param name="password">The password.</param>
-        /// <exception cref="System.ArgumentNullException">endpointConfigurationName</exception>
+        /// <exception cref="System.ArgumentNullException">endpointConfigurationName as null</exception>
         public CbisSupplierManagementClient(string endpointConfigurationName, string userName, string password)
         {
             if (string.IsNullOrEmpty(endpointConfigurationName))
@@ -360,7 +360,7 @@ namespace Cbis.ProductManagement.Client
 
             if (infoDataBool == null)
             {
-                throw new Exception(/* TODO */);
+                throw new ArgumentException("Must be InformationDataBoolean", "infoData");
             }
 
             var cultureInfo = this.ConvertCulture(infoData.Culture);
@@ -376,7 +376,7 @@ namespace Cbis.ProductManagement.Client
 
             if (infoDataDouble == null)
             {
-                throw new Exception(/* TODO */);
+                throw new ArgumentException("Must be InformationDataDouble", "infoData");
             }
 
             var cultureInfo = this.ConvertCulture(infoData.Culture);
@@ -392,7 +392,7 @@ namespace Cbis.ProductManagement.Client
 
             if (infoDataInteger == null)
             {
-                throw new Exception(/* TODO */);
+                throw new ArgumentException("Must be InformationDataInt", "infoData");
             }
 
             var cultureInfo = this.ConvertCulture(infoData.Culture);
@@ -408,7 +408,7 @@ namespace Cbis.ProductManagement.Client
 
             if (infoDataString == null)
             {
-                throw new Exception(/* TODO */);
+                throw new ArgumentException("Must be InformationDataString", "infoData");
             }
 
             var cultureInfo = this.ConvertCulture(infoData.Culture);
@@ -422,7 +422,7 @@ namespace Cbis.ProductManagement.Client
         {
             if (!occasion.StartDate.HasValue || !occasion.EndDate.HasValue)
             {
-                throw new Exception(/* TODO */);
+                throw new ArgumentOutOfRangeException("occasion", occasion, "occasion must have a start value and an end value.");
             }
 
             if (occasion.StartTime.HasValue && occasion.EndTime.HasValue)

@@ -8,8 +8,12 @@ using System.Threading.Tasks;
 namespace Cbis.ProductManagement.Client
 {
     /// <summary>
-    /// Representation of a data item. 
+    /// Representation of a data item containing attribute, language and culture and of course value. 
     /// </summary>
+    /// <seealso cref="InformationDataBool"/>
+    /// <seealso cref="InformationDataDouble"/>
+    /// <seealso cref="InformationDataInt"/>
+    /// <seealso cref="InformationDataString"/>
     public abstract class InformationData
     {
         protected InformationData(CultureInfo language, int attributeId)
@@ -30,6 +34,12 @@ namespace Cbis.ProductManagement.Client
 
         public CultureInfo Language { get; private set; }
 
+        /// <summary>
+        /// Gets the attribute identifier that uniquely describes which content is expected.
+        /// </summary>
+        /// <value>
+        /// The attribute identifier.
+        /// </value>
         public int AttributeId { get; private set; }
 
         internal abstract Generated.InformationData Create();

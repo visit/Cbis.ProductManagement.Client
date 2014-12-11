@@ -2,6 +2,9 @@ using System.Globalization;
 
 namespace Cbis.ProductManagement.Client
 {
+    /// <summary>
+    /// Represents information data which value is of the type <see cref="string"/>.
+    /// </summary>
     public class InformationDataString : InformationData
     {
         public InformationDataString(CultureInfo language, int attributeId, string value)

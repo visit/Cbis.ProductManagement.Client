@@ -9,14 +9,6 @@ namespace Cbis.ProductManagement.Client_Test
     public class UnitTest1
     {
         [TestMethod]
-        public void TestMethod1()
-        {
-            //InformationDataFactory fac = new InformationDataFactory();
-            //BoolAttributesFactory boolFac = new BoolAttributesFactory();
-            // boolFac.CreateLocationNearAirport()
-        }
-
-        [TestMethod]
         [ExpectedException(typeof(ArgumentOutOfRangeException))]
         public void CreateStarRatingTooLow()
         {

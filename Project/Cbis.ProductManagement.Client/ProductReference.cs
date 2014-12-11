@@ -1,13 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace Cbis.ProductManagement.Client
 {
-    using System.ServiceModel.Channels;
-
     public class ProductReference
     {
         public ProductReference(string name, IEnumerable<Generated.ReferenceName> referenceNames)

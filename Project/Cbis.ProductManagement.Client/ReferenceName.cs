@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.ServiceModel.Description;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Cbis.ProductManagement.Client
 {
@@ -83,7 +78,7 @@ namespace Cbis.ProductManagement.Client
             LocalName = localName;
         }
 
-        static readonly char[] InvalidChars = new[] { ':', ' ' };
+        private static readonly char[] InvalidChars = new[] { ':', ' ' };
 
         private bool IsOkName(string name)
         {

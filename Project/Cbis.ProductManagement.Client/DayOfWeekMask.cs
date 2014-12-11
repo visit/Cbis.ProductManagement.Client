@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Cbis.ProductManagement.Client
 {
     /// <summary>
-    /// 
+    /// Enables representing several day of weeks into a single enum.
     /// </summary>
     [Flags]
     public enum DayOfWeekMask

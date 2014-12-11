@@ -3,6 +3,9 @@ using System.Globalization;
 
 namespace Cbis.ProductManagement.Client
 {
+    /// <summary>
+    /// Represents informationdata containing a <see cref="double"/>
+    /// </summary>
     public class InformationDataDouble : InformationData
     {
         public InformationDataDouble(CultureInfo language, int attributeId, double value)

@@ -2,6 +2,9 @@
 
 namespace Cbis.ProductManagement.Client
 {
+    /// <summary>
+    /// Represents informationdata which value is an <see cref="int"/>.
+    /// </summary>
     public class InformationDataInt : InformationData
     {
         public InformationDataInt(CultureInfo language, int attributeId, int value) : base(language, attributeId)

@@ -16,7 +16,7 @@ namespace Cbis.ProductManagement.Client
         /// Initializes a new instance of the <see cref="ImageData"/> class.
         /// </summary>
         /// <param name="location">The location.</param>
-        /// <exception cref="System.ArgumentNullException">location</exception>
+        /// <exception cref="System.ArgumentNullException">location was null</exception>
         public ImageData(Uri location)
         {
             if (location == null)
@@ -35,6 +35,10 @@ namespace Cbis.ProductManagement.Client
         /// </value>
         public Uri Location { get; private set; }
 
+        /// <summary>
+        /// Creates a <see cref="MediaInformationData"/> out of this instance..
+        /// </summary>
+        /// <returns></returns>
         public Generated.MediaInformationData Create()
         {
             return new MediaInformationData()
