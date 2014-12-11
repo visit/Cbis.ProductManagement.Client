@@ -18,7 +18,7 @@ namespace Cbis.ProductManagement.Client
         /// <param name="name">The name.</param>
         /// <param name="language">The language.</param>
         /// <returns></returns>
-        /// <exception cref="System.ArgumentNullException">name</exception>
+        /// <exception cref="System.ArgumentNullException">name was null</exception>
         public InformationData CreateName(string name, CultureInfo language)
         {
             if (string.IsNullOrEmpty(name))
