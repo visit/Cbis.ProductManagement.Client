@@ -2,12 +2,9 @@
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
-using System.Net;
-using System.Security.Policy;
 using System.ServiceModel;
 using System.ServiceModel.Channels;
-using System.Text;
-using System.Threading.Tasks;
+
 using Cbis.ProductManagement.Client.Generated;
 
 namespace Cbis.ProductManagement.Client
