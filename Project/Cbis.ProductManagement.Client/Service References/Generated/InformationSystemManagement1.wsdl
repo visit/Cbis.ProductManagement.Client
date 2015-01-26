@@ -75,6 +75,24 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="GetProductReferences">
+      <soap12:operation soapAction="http://cbis.citybreak.com/InformationSystemManagement/IInformationSystemManagement/GetProductReferences" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModifyProductReferences">
+      <soap12:operation soapAction="http://cbis.citybreak.com/InformationSystemManagement/IInformationSystemManagement/ModifyProductReferences" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:service name="InformationSystemManagement">
     <wsdl:port name="CustomBinding_IInformationSystemManagement" binding="tns:CustomBinding_IInformationSystemManagement">

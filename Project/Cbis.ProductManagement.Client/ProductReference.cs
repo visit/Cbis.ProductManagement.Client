@@ -4,7 +4,7 @@ namespace Cbis.ProductManagement.Client
 {
     public class ProductReference
     {
-        public ProductReference(string name, IEnumerable<Generated.ReferenceName> referenceNames)
+        public ProductReference(string name, IEnumerable<Client.ReferenceName> referenceNames)
         {
             this.Name = name;
             this.ReferenceNames = new List<ReferenceName>();

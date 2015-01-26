@@ -68,6 +68,7 @@
     <Compile Include="InformationDataInt.cs" />
     <Compile Include="InformationDataString.cs" />
     <Compile Include="Occasion.cs" />
+    <Compile Include="ProductReferenceSetResult.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReferenceName.cs" />
     <Compile Include="Service References\Generated\Reference.cs">
@@ -99,6 +100,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\Generated\Cbis.ProductManagement.Client.Generated.ProductReference.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Generated\Cbis.ProductManagement.Client.Generated.ProductReferenceSetResult.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\Generated\configuration91.svcinfo" />

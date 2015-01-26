@@ -2,6 +2,8 @@
 
 namespace Cbis.ProductManagement.Client
 {
+    using System.ServiceModel;
+
     /// <summary>
     /// Describes a reference name that is used with Cbis. Normally on the form cb:123 where cb is the sub system reference name. and the 123 is the id in that system.
     /// <para>
@@ -164,6 +166,11 @@ namespace Cbis.ProductManagement.Client
 
             int ret = SubSystem.CompareTo(name.SubSystem);
             return ret != 0 ? ret : LocalName.CompareTo(name.SubSystem);
+        }
+
+        internal Generated.ReferenceName CreateContractReferenceName()
+        {
+            return new Generated.ReferenceName(this);
         }
     }
 }
