@@ -107,4 +107,36 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="GetProductReferences">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/Cbis.ExternalApi.Contract" minOccurs="0" name="organizationReference" nillable="true" type="q18:OrganizationReference" />
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/Cbis.ExternalApi.Contract" minOccurs="0" name="referenceName" nillable="true" type="q19:ReferenceName" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetProductReferencesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/Cbis.ExternalApi.Contract" minOccurs="0" name="GetProductReferencesResult" nillable="true" type="q20:ProductReference" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ModifyProductReferences">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/Cbis.ExternalApi.Contract" minOccurs="0" name="organizationReference" nillable="true" type="q21:OrganizationReference" />
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/Cbis.ExternalApi.Contract" minOccurs="0" name="productToActOn" nillable="true" type="q22:ReferenceName" />
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/Cbis.ExternalApi.Contract" minOccurs="0" name="referencesToAdd" nillable="true" type="q23:ArrayOfReferenceName" />
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/Cbis.ExternalApi.Contract" minOccurs="0" name="referencesToRemove" nillable="true" type="q24:ArrayOfReferenceName" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ModifyProductReferencesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/Cbis.ExternalApi.Contract" minOccurs="0" name="ModifyProductReferencesResult" nillable="true" type="q25:ProductReferenceSetResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

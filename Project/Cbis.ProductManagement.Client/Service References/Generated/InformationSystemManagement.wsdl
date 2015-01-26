@@ -51,6 +51,18 @@
   <wsdl:message name="IInformationSystemManagement_GetSystemCultures_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetSystemCulturesResponse" />
   </wsdl:message>
+  <wsdl:message name="IInformationSystemManagement_GetProductReferences_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductReferences" />
+  </wsdl:message>
+  <wsdl:message name="IInformationSystemManagement_GetProductReferences_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductReferencesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInformationSystemManagement_ModifyProductReferences_InputMessage">
+    <wsdl:part name="parameters" element="tns:ModifyProductReferences" />
+  </wsdl:message>
+  <wsdl:message name="IInformationSystemManagement_ModifyProductReferences_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ModifyProductReferencesResponse" />
+  </wsdl:message>
   <wsdl:portType name="IInformationSystemManagement">
     <wsdl:operation name="CreateOrganization">
       <wsdl:input wsaw:Action="http://cbis.citybreak.com/InformationSystemManagement/IInformationSystemManagement/CreateOrganization" message="tns:IInformationSystemManagement_CreateOrganization_InputMessage" />
@@ -79,6 +91,14 @@
     <wsdl:operation name="GetSystemCultures">
       <wsdl:input wsaw:Action="http://cbis.citybreak.com/InformationSystemManagement/IInformationSystemManagement/GetSystemCultures" message="tns:IInformationSystemManagement_GetSystemCultures_InputMessage" />
       <wsdl:output wsaw:Action="http://cbis.citybreak.com/InformationSystemManagement/IInformationSystemManagement/GetSystemCulturesResponse" message="tns:IInformationSystemManagement_GetSystemCultures_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProductReferences">
+      <wsdl:input wsaw:Action="http://cbis.citybreak.com/InformationSystemManagement/IInformationSystemManagement/GetProductReferences" message="tns:IInformationSystemManagement_GetProductReferences_InputMessage" />
+      <wsdl:output wsaw:Action="http://cbis.citybreak.com/InformationSystemManagement/IInformationSystemManagement/GetProductReferencesResponse" message="tns:IInformationSystemManagement_GetProductReferences_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ModifyProductReferences">
+      <wsdl:input wsaw:Action="http://cbis.citybreak.com/InformationSystemManagement/IInformationSystemManagement/ModifyProductReferences" message="tns:IInformationSystemManagement_ModifyProductReferences_InputMessage" />
+      <wsdl:output wsaw:Action="http://cbis.citybreak.com/InformationSystemManagement/IInformationSystemManagement/ModifyProductReferencesResponse" message="tns:IInformationSystemManagement_ModifyProductReferences_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
 </wsdl:definitions>

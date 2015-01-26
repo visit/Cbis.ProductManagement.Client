@@ -9,6 +9,8 @@ using Cbis.ProductManagement.Client.Generated;
 
 namespace Cbis.ProductManagement.Client
 {
+    using System.CodeDom.Compiler;
+
     /// <summary>
     /// A management client to communicate with the Cbis system to manage suppliers and product.
     /// </summary>
@@ -137,6 +139,16 @@ namespace Cbis.ProductManagement.Client
             return new ReferenceName(orgReference.SubSystem, orgReference.LocalName);
         }
 
+        /// <summary>
+        /// Updates information about the supplier. Data normally used is contact information, like email, phone and address.
+        /// </summary>
+        /// <param name="organizationReference">The organization reference.</param>
+        /// <param name="informationData">The information data that should be stored with the supplier.</param>
+        /// <exception cref="System.ArgumentNullException">
+        /// organizationReference
+        /// or
+        /// informationData
+        /// </exception>
         public void UpdateSupplier(ReferenceName organizationReference, List<InformationData> informationData)
         {
             if (organizationReference == null)
@@ -157,6 +169,25 @@ namespace Cbis.ProductManagement.Client
             _client.UpdateOrganization(orgRef, dataList);
         }
 
+        /// <summary>
+        /// Sets information that should be stored with the product. All information submitted though <paramref name="informationData"/> will be stored.
+        /// All informationdata that exists on the product not included in that set will be deleted.
+        /// </summary>
+        /// <param name="organizationReference">The organization reference.</param>
+        /// <param name="name">The name.</param>
+        /// <param name="categoryId">The category identifier.</param>
+        /// <param name="productId">The product identifier.</param>
+        /// <param name="informationData">The information data.</param>
+        /// <param name="images">The images.</param>
+        /// <param name="occasions">The occasions.</param>
+        /// <returns></returns>
+        /// <exception cref="System.ArgumentNullException">
+        /// organizationReference
+        /// or
+        /// name
+        /// or
+        /// productId
+        /// </exception>
         public ReferenceName SetProduct(ReferenceName organizationReference, string name, int categoryId, ReferenceName productId, 
             IEnumerable<InformationData> informationData, IEnumerable<ImageData> images, IEnumerable<Occasion> occasions)
         {
@@ -217,6 +248,10 @@ namespace Cbis.ProductManagement.Client
             return validator;
         }
 
+        /// <summary>
+        /// Gets all categores that are associated with the organization. The set is unique per organization. 
+        /// </summary>
+        /// <returns></returns>
         public List<Category> GetCategories()
         {
             var categories = _client.GetSystemCategories();
@@ -230,6 +265,13 @@ namespace Cbis.ProductManagement.Client
             return list;
         }
 
+        /// <summary>
+        /// Gets information related to a product.
+        /// </summary>
+        /// <param name="organizationReference">The organization reference.</param>
+        /// <param name="productReference">The product reference.</param>
+        /// <returns></returns>
+        /// <exception cref="System.Exception"></exception>
         public Product GetProduct(ReferenceName organizationReference, ReferenceName productReference)
         {
             var orgRef = new OrganizationReference(organizationReference);
@@ -247,7 +289,7 @@ namespace Cbis.ProductManagement.Client
 
                 if (!converter.TryGetValue(data.GetType(), out dataConverter))
                 {
-                    throw new Exception(/*TODO*/);
+                    throw new Exception("Failed to find converter for type: " + data.GetType());
                 }
 
                 informationDataList.Add(dataConverter(data));
@@ -270,14 +312,21 @@ namespace Cbis.ProductManagement.Client
             return new Product(productReferenceName, informationDataList, occasions, images);
         }
 
+        /// <summary>
+        /// Retrieves all products from the organization in a paged manner.
+        /// </summary>
+        /// <param name="organizationReference">The organization reference.</param>
+        /// <param name="pageSize">Size of the page.</param>
+        /// <param name="skipPages">The skip pages.</param>
+        /// <returns></returns>
+        /// <exception cref="System.ArgumentNullException">The organizationReference was null</exception>
         public List<ProductReference> GetProducts(ReferenceName organizationReference, int pageSize, int skipPages)
         {
-            if (organizationReference == null)
+            OrganizationReference orgRef = null;
+            if (organizationReference != null)
             {
-                throw new ArgumentNullException("organizationReference");
+                orgRef = new OrganizationReference(organizationReference);
             }
-
-            OrganizationReference orgRef = new OrganizationReference(organizationReference);
 
             var productList = _client.GetProducts(orgRef, pageSize, skipPages);
 
@@ -285,7 +334,7 @@ namespace Cbis.ProductManagement.Client
 
             foreach (var p in productList)
             {
-                list.Add(new ProductReference(p.SystemName, p.ReferenceNames));
+                list.Add(new ProductReference(p.SystemName, p.ReferenceNames.Select(x => new ReferenceName(x.SubSystem, x.LocalName))));
             }
 
             return list;
@@ -449,6 +498,67 @@ namespace Cbis.ProductManagement.Client
             }
 
             return cultureInfo;
+        }
+
+        /// <summary>
+        /// Gets the product references that are available for a specific product.
+        /// </summary>
+        /// <param name="organizationReference">The organization reference.</param>
+        /// <param name="productReference">The product reference.</param>
+        /// <returns></returns>
+        /// <exception cref="System.ArgumentNullException">The productReference was null</exception>
+        public ProductReference GetProductReferences(OrganizationReference organizationReference, ReferenceName productReference)
+        {
+            if (productReference == null)
+            {
+                throw new ArgumentNullException("productReference");
+            }
+
+            var refs = _client.GetProductReferences(
+                organizationReference != null
+                    ? new Generated.OrganizationReference(new ReferenceName(organizationReference.ToString()))
+                    : null,
+                new Generated.ReferenceName(productReference));
+
+            return new ProductReference(refs.SystemName, refs.ReferenceNames.Select(x => new ReferenceName(x.SubSystem, x.LocalName)));
+        }
+
+        public ProductReferenceSetResult ModifyProductReferences(
+            OrganizationReference organizationReference,
+            ReferenceName productToActOn,
+            List<ReferenceName> referencesToAdd,
+            List<ReferenceName> referencesToRemove)
+        {
+            if (referencesToAdd == null)
+            {
+                referencesToAdd = new List<ReferenceName>();
+            }
+
+            if (referencesToRemove == null)
+            {
+                referencesToRemove = new List<ReferenceName>();
+            }
+
+            if (productToActOn == null)
+            {
+                throw new ArgumentNullException("productToActOn");
+            }
+
+            if (referencesToAdd.Count == 0 && referencesToRemove.Count == 0)
+            {
+                throw new InvalidOperationException("No names addad and no removed, call obsolete. Remove");
+            }
+
+            var result = _client.ModifyProductReferences(
+                organizationReference,
+                productToActOn.CreateContractReferenceName(),
+                referencesToAdd.Select(x => x.CreateContractReferenceName()).ToArray(),
+                referencesToRemove.Select(x => x.CreateContractReferenceName()).ToArray());
+
+            return
+                new ProductReferenceSetResult(
+                    result.AddedReferences.Select(x => new ReferenceName(x.SubSystem, x.LocalName)),
+                    result.RemovedReferences.Select(x => new ReferenceName(x.SubSystem, x.LocalName)));
         }
     }
 }

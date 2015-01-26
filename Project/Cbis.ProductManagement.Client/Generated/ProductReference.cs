@@ -23,5 +23,10 @@ namespace Cbis.ProductManagement.Client.Generated
             this.SubSystem = reference.SubSystem;
             this.LocalName = reference.LocalName;
         }
+
+        public override string ToString()
+        {
+            return string.Format("{0}:{1}", SubSystem, LocalName);
+        }
     }
 }

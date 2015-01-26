@@ -29,6 +29,16 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="InformationData" nillable="true" type="tns:InformationData" />
+  <xs:complexType name="InformationDataString">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:InformationData">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Value" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="InformationDataString" nillable="true" type="tns:InformationDataString" />
   <xs:complexType name="InformationDataInt">
     <xs:complexContent mixed="false">
       <xs:extension base="tns:InformationData">
@@ -49,16 +59,6 @@
     </xs:complexContent>
   </xs:complexType>
   <xs:element name="InformationDataDouble" nillable="true" type="tns:InformationDataDouble" />
-  <xs:complexType name="InformationDataString">
-    <xs:complexContent mixed="false">
-      <xs:extension base="tns:InformationData">
-        <xs:sequence>
-          <xs:element minOccurs="0" name="Value" nillable="true" type="xs:string" />
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:element name="InformationDataString" nillable="true" type="tns:InformationDataString" />
   <xs:complexType name="InformationDataBoolean">
     <xs:complexContent mixed="false">
       <xs:extension base="tns:InformationData">
@@ -217,4 +217,11 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Category" nillable="true" type="tns:Category" />
+  <xs:complexType name="ProductReferenceSetResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AddedReferences" nillable="true" type="tns:ArrayOfReferenceName" />
+      <xs:element minOccurs="0" name="RemovedReferences" nillable="true" type="tns:ArrayOfReferenceName" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProductReferenceSetResult" nillable="true" type="tns:ProductReferenceSetResult" />
 </xs:schema>
