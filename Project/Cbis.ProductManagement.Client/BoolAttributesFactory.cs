@@ -458,5 +458,10 @@ namespace Cbis.ProductManagement.Client
         {
             return new InformationDataBool(CultureInfo.InvariantCulture, 1002281, value); 
         }
+
+        public InformationData CdAvailable(bool value)
+        {
+            return new InformationDataBool(CultureInfo.InvariantCulture, 1002311, value);
+        }
     }
 }
