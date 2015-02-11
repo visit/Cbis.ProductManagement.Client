@@ -47,6 +47,10 @@ namespace Cbis.ProductManagement.Example
                     RemoveReference(client, args.Skip(3).ToList());
                     break;
 
+                case "setcat":
+                    SetCategory(client, args.Skip(3).ToList());
+                    break;
+
                 default:
                     PrintHelp();
                     break;
@@ -192,6 +196,32 @@ namespace Cbis.ProductManagement.Example
             {
                 Console.WriteLine(item.Id + "\t" + item.Name);
             }
+        }
+
+        private static void SetCategory(CbisSupplierManagementClient client, List<string> list)
+        {
+            if (list.Count != 3)
+            {
+                Console.WriteLine(
+                    string.Format(
+                        "Usage: {0} [username] [password] setcat [orgreference] [product reference] [categoryId]",
+                        Path.GetFileName(System.Reflection.Assembly.GetEntryAssembly().Location)));
+                return;
+            }
+
+            ReferenceName orgRef = new ReferenceName(list[0]);
+            ReferenceName prodRef = new ReferenceName(list[1]);
+            int categoryId = int.Parse(list[2]);
+
+            var product = client.GetProduct(orgRef, prodRef);
+
+            client.SetProduct(
+                orgRef,
+                ((Client.InformationDataString)product.InformationData.First(x => x.AttributeId == 99)).Value,
+                categoryId,
+                prodRef,
+                product.InformationData,
+                product.Images, product.Occasions);
         }
     }
 }
