@@ -26,6 +26,11 @@ namespace Cbis.ProductManagement.Client
             };
         }
 
+        public override string ToString()
+        {
+            return string.Format("{0}/{1}={2}", AttributeId, Language, Value);
+        }
+
         public override bool Equals(object obj)
         {
             InformationDataBool b = obj as InformationDataBool;
