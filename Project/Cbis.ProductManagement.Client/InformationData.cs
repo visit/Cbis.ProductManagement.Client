@@ -55,5 +55,7 @@ namespace Cbis.ProductManagement.Client
         {
             return AttributeId.GetHashCode() ^ Language.GetHashCode();
         }
+
+        public abstract override string ToString();
     }
 }
