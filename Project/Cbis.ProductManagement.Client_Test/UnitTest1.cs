@@ -41,5 +41,41 @@ namespace Cbis.ProductManagement.Client_Test
 
             Assert.AreEqual(new InformationDataInt(CultureInfo.InvariantCulture, 151, 5), item);
         }
+
+        [TestMethod]
+        public void CreateNuberOfBars()
+        {
+            InformationDataFactory fac = new InformationDataFactory();
+            var item = fac.CreateNumberOfBars(5);
+
+            Assert.AreEqual(new InformationDataInt(CultureInfo.InvariantCulture, 133, 5), item);
+        }
+
+        [TestMethod]
+        public void CreateNuberOfConferenceRooms()
+        {
+            InformationDataFactory fac = new InformationDataFactory();
+            var item = fac.CreateNumberOfConferenceRooms(5);
+
+            Assert.AreEqual(new InformationDataInt(CultureInfo.InvariantCulture, 132, 5), item);
+        }
+
+        [TestMethod]
+        public void CreateNuberOfFloors()
+        {
+            InformationDataFactory fac = new InformationDataFactory();
+            var item = fac.CreateNumberOfFloors(5);
+
+            Assert.AreEqual(new InformationDataInt(CultureInfo.InvariantCulture, 131, 5), item);
+        }
+
+        [TestMethod]
+        public void CreateNuberOfRooms()
+        {
+            InformationDataFactory fac = new InformationDataFactory();
+            var item = fac.CreateNumberOfRooms(5);
+
+            Assert.AreEqual(new InformationDataInt(CultureInfo.InvariantCulture, 130, 5), item);
+        }
     }
 }
