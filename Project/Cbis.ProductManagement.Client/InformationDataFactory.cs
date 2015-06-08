@@ -118,7 +118,7 @@ namespace Cbis.ProductManagement.Client
                 throw new ArgumentOutOfRangeException("noRooms", noRooms, "Must be positive or not defined.");
             }
 
-            return new InformationDataString(CultureInfo.InvariantCulture, 130, noRooms.ToString(CultureInfo.InvariantCulture));
+            return new InformationDataInt(CultureInfo.InvariantCulture, 130, noRooms);
         }
 
         public InformationData CreateNumberOfFloors(int floors)
@@ -128,7 +128,7 @@ namespace Cbis.ProductManagement.Client
                 throw new ArgumentOutOfRangeException("floors", floors, "Must be positive or not defined.");
             }
 
-            return new InformationDataString(CultureInfo.InvariantCulture, 131, floors.ToString(CultureInfo.InvariantCulture));
+            return new InformationDataInt(CultureInfo.InvariantCulture, 131, floors);
         }
 
         public InformationData CreateNumberOfConferenceRooms(int noRooms)
@@ -138,7 +138,7 @@ namespace Cbis.ProductManagement.Client
                 throw new ArgumentOutOfRangeException("noRooms", noRooms, "Must be positive or not defined.");
             }
 
-            return new InformationDataString(CultureInfo.InvariantCulture, 132, noRooms.ToString(CultureInfo.InvariantCulture));
+            return new InformationDataInt(CultureInfo.InvariantCulture, 132, noRooms);
         }
 
         public InformationData CreateNumberOfBars(int noBars)
@@ -148,7 +148,7 @@ namespace Cbis.ProductManagement.Client
                 throw new ArgumentOutOfRangeException("noBars", noBars, "Must be positive or not defined.");
             }
 
-            return new InformationDataString(CultureInfo.InvariantCulture, 133, noBars.ToString(CultureInfo.InvariantCulture));
+            return new InformationDataInt(CultureInfo.InvariantCulture, 133, noBars);
         }
 
         public InformationData CreateYearBuilt(int year)
