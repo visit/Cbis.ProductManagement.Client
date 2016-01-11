@@ -389,14 +389,14 @@ namespace Cbis.ProductManagement.Client
         /// <param name="priceFrom">The price from.</param>
         /// <returns></returns>
         /// <exception cref="System.ArgumentOutOfRangeException">priceFrom was less than zero.</exception>
-        public InformationData CreatePriceFrom(int priceFrom)
+        public InformationData CreatePriceFrom(double priceFrom)
         {
             if (priceFrom < 0)
             {
                 throw new ArgumentOutOfRangeException("priceFrom");
             }
 
-            return new InformationDataInt(CultureInfo.InvariantCulture, 141, priceFrom);
+            return new InformationDataDouble(CultureInfo.InvariantCulture, 141, priceFrom);
         }
 
         /// <summary>
