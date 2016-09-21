@@ -324,11 +324,6 @@ namespace Cbis.ProductManagement.Client
                 throw new ArgumentOutOfRangeException("longitude", longitude, "Must be between -180 and 180");
             }
 
-            if(longitude == 0.0 && latitude == 0.0)
-            {
-                throw new ArgumentNullException("latitude", "Not likely to be valid with two zero numbers");
-            }
-
             yield return new InformationDataDouble(CultureInfo.InvariantCulture, 113, latitude);
             yield return new InformationDataDouble(CultureInfo.InvariantCulture, 114, longitude);
         }
