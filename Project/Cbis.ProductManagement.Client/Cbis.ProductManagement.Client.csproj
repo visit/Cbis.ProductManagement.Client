@@ -81,7 +81,6 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="app.config" />
     <None Include="Cbis.ProductManagement.Client.nuspec" />
     <None Include="Service References\Generated\Cbis.ProductManagement.Client.Generated.Category.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
