@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://cbis.citybreak.com/InformationSystemManagement" elementFormDefault="qualified" targetNamespace="http://cbis.citybreak.com/InformationSystemManagement" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:import schemaLocation="http://localhost:44300/InformationSystemManagement.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Cbis.ExternalApi.Contract" />
-  <xs:import schemaLocation="http://localhost:44300/InformationSystemManagement.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/System.Globalization" />
+  <xs:import schemaLocation="http://localhost:14000/InformationSystemManagement.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Cbis.ExternalApi.Contract" />
+  <xs:import schemaLocation="http://localhost:14000/InformationSystemManagement.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/System.Globalization" />
   <xs:element name="CreateOrganization">
     <xs:complexType>
       <xs:sequence>
@@ -137,6 +137,19 @@
       <xs:sequence>
         <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/Cbis.ExternalApi.Contract" minOccurs="0" name="ModifyProductReferencesResult" nillable="true" type="q25:ProductReferenceSetResult" />
       </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ArchiveProduct">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/Cbis.ExternalApi.Contract" minOccurs="0" name="organizationReference" nillable="true" type="q26:OrganizationReference" />
+        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/Cbis.ExternalApi.Contract" minOccurs="0" name="referenceName" nillable="true" type="q27:ReferenceName" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ArchiveProductResponse">
+    <xs:complexType>
+      <xs:sequence />
     </xs:complexType>
   </xs:element>
 </xs:schema>
