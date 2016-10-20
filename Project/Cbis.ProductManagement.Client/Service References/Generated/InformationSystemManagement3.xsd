@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/Cbis.ExternalApi.Contract" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Cbis.ExternalApi.Contract" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:import schemaLocation="http://localhost:44300/InformationSystemManagement.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="http://localhost:14000/InformationSystemManagement.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="http://localhost:14000/InformationSystemManagement.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/CBIS.InformationSystem.Models" />
   <xs:complexType name="OrganizationReference">
     <xs:complexContent mixed="false">
       <xs:extension base="tns:ReferenceName">
@@ -29,16 +30,16 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="InformationData" nillable="true" type="tns:InformationData" />
-  <xs:complexType name="InformationDataString">
+  <xs:complexType name="InformationDataBoolean">
     <xs:complexContent mixed="false">
       <xs:extension base="tns:InformationData">
         <xs:sequence>
-          <xs:element minOccurs="0" name="Value" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Value" type="xs:boolean" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:element name="InformationDataString" nillable="true" type="tns:InformationDataString" />
+  <xs:element name="InformationDataBoolean" nillable="true" type="tns:InformationDataBoolean" />
   <xs:complexType name="InformationDataInt">
     <xs:complexContent mixed="false">
       <xs:extension base="tns:InformationData">
@@ -59,16 +60,16 @@
     </xs:complexContent>
   </xs:complexType>
   <xs:element name="InformationDataDouble" nillable="true" type="tns:InformationDataDouble" />
-  <xs:complexType name="InformationDataBoolean">
+  <xs:complexType name="InformationDataString">
     <xs:complexContent mixed="false">
       <xs:extension base="tns:InformationData">
         <xs:sequence>
-          <xs:element minOccurs="0" name="Value" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Value" nillable="true" type="xs:string" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:element name="InformationDataBoolean" nillable="true" type="tns:InformationDataBoolean" />
+  <xs:element name="InformationDataString" nillable="true" type="tns:InformationDataString" />
   <xs:complexType name="ArrayOfMediaInformationData">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="MediaInformationData" nillable="true" type="tns:MediaInformationData" />
@@ -100,75 +101,10 @@
       <xs:element minOccurs="0" name="EndTime" nillable="true" type="ser:duration" />
       <xs:element minOccurs="0" name="StartDate" nillable="true" type="xs:dateTime" />
       <xs:element minOccurs="0" name="StartTime" nillable="true" type="ser:duration" />
-      <xs:element minOccurs="0" name="ValidDays" type="tns:WeekDays" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/CBIS.InformationSystem.Models" minOccurs="0" name="ValidDays" type="q1:WeekDays" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="OccasionInformationData" nillable="true" type="tns:OccasionInformationData" />
-  <xs:simpleType name="WeekDays">
-    <xs:list>
-      <xs:simpleType>
-        <xs:restriction base="xs:string">
-          <xs:enumeration value="Exact">
-            <xs:annotation>
-              <xs:appinfo>
-                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">0</EnumerationValue>
-              </xs:appinfo>
-            </xs:annotation>
-          </xs:enumeration>
-          <xs:enumeration value="Monday">
-            <xs:annotation>
-              <xs:appinfo>
-                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
-              </xs:appinfo>
-            </xs:annotation>
-          </xs:enumeration>
-          <xs:enumeration value="Tuesday">
-            <xs:annotation>
-              <xs:appinfo>
-                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
-              </xs:appinfo>
-            </xs:annotation>
-          </xs:enumeration>
-          <xs:enumeration value="Wednesday">
-            <xs:annotation>
-              <xs:appinfo>
-                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">4</EnumerationValue>
-              </xs:appinfo>
-            </xs:annotation>
-          </xs:enumeration>
-          <xs:enumeration value="Thursday">
-            <xs:annotation>
-              <xs:appinfo>
-                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">8</EnumerationValue>
-              </xs:appinfo>
-            </xs:annotation>
-          </xs:enumeration>
-          <xs:enumeration value="Friday">
-            <xs:annotation>
-              <xs:appinfo>
-                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">16</EnumerationValue>
-              </xs:appinfo>
-            </xs:annotation>
-          </xs:enumeration>
-          <xs:enumeration value="Saturday">
-            <xs:annotation>
-              <xs:appinfo>
-                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">32</EnumerationValue>
-              </xs:appinfo>
-            </xs:annotation>
-          </xs:enumeration>
-          <xs:enumeration value="Sunday">
-            <xs:annotation>
-              <xs:appinfo>
-                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">64</EnumerationValue>
-              </xs:appinfo>
-            </xs:annotation>
-          </xs:enumeration>
-        </xs:restriction>
-      </xs:simpleType>
-    </xs:list>
-  </xs:simpleType>
-  <xs:element name="WeekDays" nillable="true" type="tns:WeekDays" />
   <xs:complexType name="ProductCallbackReference">
     <xs:sequence>
       <xs:element minOccurs="0" name="CbisProductId" nillable="true" type="tns:ReferenceName" />

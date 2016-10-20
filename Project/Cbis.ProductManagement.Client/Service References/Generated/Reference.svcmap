@@ -19,17 +19,18 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost:44300/InformationSystemManagement.svc" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://localhost:14000/InformationSystemManagement.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="InformationSystemManagement.wsdl" MetadataType="Wsdl" ID="2d91d832-e1c9-47a0-8d87-c01837dae321" SourceId="1" SourceUrl="http://localhost:44300/InformationSystemManagement.svc?wsdl=wsdl0" />
-    <MetadataFile FileName="InformationSystemManagement2.xsd" MetadataType="Schema" ID="180bcaa0-d7f0-4525-8deb-579e31571a8e" SourceId="1" SourceUrl="http://localhost:44300/InformationSystemManagement.svc?xsd=xsd4" />
-    <MetadataFile FileName="InformationSystemManagement21.xsd" MetadataType="Schema" ID="60ed31f6-9165-4d87-9356-c4b22b8477be" SourceId="1" SourceUrl="http://localhost:44300/InformationSystemManagement.svc?xsd=xsd3" />
-    <MetadataFile FileName="InformationSystemManagement.disco" MetadataType="Disco" ID="47cb7d0e-bd39-4c9d-9d9c-931696cf9110" SourceId="1" SourceUrl="http://localhost:44300/InformationSystemManagement.svc?disco" />
-    <MetadataFile FileName="InformationSystemManagement1.wsdl" MetadataType="Wsdl" ID="cdb77105-7065-4970-851f-a291cc600842" SourceId="1" SourceUrl="http://localhost:44300/InformationSystemManagement.svc?wsdl" />
-    <MetadataFile FileName="InformationSystemManagement22.xsd" MetadataType="Schema" ID="ff544d73-348f-4eea-b4ee-aa30ea69c9dd" SourceId="1" SourceUrl="http://localhost:44300/InformationSystemManagement.svc?xsd=xsd0" />
-    <MetadataFile FileName="InformationSystemManagement23.xsd" MetadataType="Schema" ID="a56eecb1-4005-4594-9543-e830e0847719" SourceId="1" SourceUrl="http://localhost:44300/InformationSystemManagement.svc?xsd=xsd2" />
-    <MetadataFile FileName="InformationSystemManagement24.xsd" MetadataType="Schema" ID="b178ff2b-2a49-4818-98ec-5596632cdfe1" SourceId="1" SourceUrl="http://localhost:44300/InformationSystemManagement.svc?xsd=xsd1" />
+    <MetadataFile FileName="InformationSystemManagement.xsd" MetadataType="Schema" ID="9704722b-419e-41c0-bfe1-544e3195acaf" SourceId="1" SourceUrl="http://localhost:14000/InformationSystemManagement.svc?xsd=xsd3" />
+    <MetadataFile FileName="InformationSystemManagement1.xsd" MetadataType="Schema" ID="01167340-be88-4c16-b9da-33299092c62a" SourceId="1" SourceUrl="http://localhost:14000/InformationSystemManagement.svc?xsd=xsd5" />
+    <MetadataFile FileName="InformationSystemManagement2.xsd" MetadataType="Schema" ID="f2d14950-0767-4e36-acb4-b7279c46d7d0" SourceId="1" SourceUrl="http://localhost:14000/InformationSystemManagement.svc?xsd=xsd4" />
+    <MetadataFile FileName="InformationSystemManagement1.disco" MetadataType="Disco" ID="fa05451d-f56b-4fd7-b579-89eb563d3583" SourceId="1" SourceUrl="http://localhost:14000/InformationSystemManagement.svc?disco" />
+    <MetadataFile FileName="InformationSystemManagement2.wsdl" MetadataType="Wsdl" ID="164bd1d2-eea1-4deb-9857-7cefc8f93bfa" SourceId="1" SourceUrl="http://localhost:14000/InformationSystemManagement.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="InformationSystemManagement21.wsdl" MetadataType="Wsdl" ID="df7702da-16f8-41d9-9528-9f2723c1d5b1" SourceId="1" SourceUrl="http://localhost:14000/InformationSystemManagement.svc?wsdl" />
+    <MetadataFile FileName="InformationSystemManagement3.xsd" MetadataType="Schema" ID="5a302e79-b657-48b5-9f73-d0f031758c6f" SourceId="1" SourceUrl="http://localhost:14000/InformationSystemManagement.svc?xsd=xsd2" />
+    <MetadataFile FileName="InformationSystemManagement4.xsd" MetadataType="Schema" ID="5eab674c-dda3-44f9-a157-dacf60906b14" SourceId="1" SourceUrl="http://localhost:14000/InformationSystemManagement.svc?xsd=xsd0" />
+    <MetadataFile FileName="InformationSystemManagement5.xsd" MetadataType="Schema" ID="39f071b2-8acc-4ee4-a887-c188658a83ce" SourceId="1" SourceUrl="http://localhost:14000/InformationSystemManagement.svc?xsd=xsd1" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

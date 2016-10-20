@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="iu0HEoC/rfppQtaCAQunht631kU=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="ZvEc5VkkHLjCl0xk9xRSKweo9d4=">
   <bindingConfigurations>
     <bindingConfiguration bindingType="wsHttpBinding" name="CustomBinding_IInformationSystemManagement">
       <properties>
@@ -127,10 +127,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="CustomBinding_IInformationSystemManagement" contract="Generated.IInformationSystemManagement" bindingType="wsHttpBinding" address="http://localhost:44300/InformationSystemManagement.svc" bindingConfiguration="CustomBinding_IInformationSystemManagement">
+    <endpoint name="CustomBinding_IInformationSystemManagement" contract="Generated.IInformationSystemManagement" bindingType="wsHttpBinding" address="http://localhost:14000/InformationSystemManagement.svc" bindingConfiguration="CustomBinding_IInformationSystemManagement">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://localhost:44300/InformationSystemManagement.svc</serializedValue>
+          <serializedValue>http://localhost:14000/InformationSystemManagement.svc</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
