@@ -326,6 +326,20 @@ namespace Cbis.ProductManagement.Client
             _client.ArchiveProduct(orgRef, prodRef);
         }
 
+        /// <summary>
+        /// Archive a product
+        /// </summary>
+        /// <param name="organizationReference">The organization reference.</param>
+        /// <param name="productReference">The product reference.</param>
+        /// <returns>List of CultureInfos</returns>
+        public void ActiveProduct(ReferenceName organizationReference, ReferenceName productReference)
+        {
+            var orgRef = new OrganizationReference(organizationReference);
+            var prodRef = new Generated.ReferenceName(productReference);
+
+            _client.ActiveProduct(orgRef, prodRef);
+        }
+
 
         /// <summary>
         /// Retrieves all products from the organization in a paged manner.

@@ -914,6 +914,16 @@ namespace Cbis.ProductManagement.Client.Generated {
             "t/ArchiveProduct", ReplyAction="http://cbis.citybreak.com/InformationSystemManagement/IInformationSystemManagemen" +
             "t/ArchiveProductResponse")]
         System.Threading.Tasks.Task ArchiveProductAsync(Cbis.ProductManagement.Client.Generated.OrganizationReference organizationReference, Cbis.ProductManagement.Client.Generated.ReferenceName referenceName);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://cbis.citybreak.com/InformationSystemManagement/IInformationSystemManagemen" +
+            "t/ActiveProduct", ReplyAction="http://cbis.citybreak.com/InformationSystemManagement/IInformationSystemManagemen" +
+            "t/ActiveProductResponse")]
+        void ActiveProduct(Cbis.ProductManagement.Client.Generated.OrganizationReference organizationReference, Cbis.ProductManagement.Client.Generated.ReferenceName referenceName);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://cbis.citybreak.com/InformationSystemManagement/IInformationSystemManagemen" +
+            "t/ActiveProduct", ReplyAction="http://cbis.citybreak.com/InformationSystemManagement/IInformationSystemManagemen" +
+            "t/ActiveProductResponse")]
+        System.Threading.Tasks.Task ActiveProductAsync(Cbis.ProductManagement.Client.Generated.OrganizationReference organizationReference, Cbis.ProductManagement.Client.Generated.ReferenceName referenceName);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -1021,6 +1031,14 @@ namespace Cbis.ProductManagement.Client.Generated {
         
         public System.Threading.Tasks.Task ArchiveProductAsync(Cbis.ProductManagement.Client.Generated.OrganizationReference organizationReference, Cbis.ProductManagement.Client.Generated.ReferenceName referenceName) {
             return base.Channel.ArchiveProductAsync(organizationReference, referenceName);
+        }
+        
+        public void ActiveProduct(Cbis.ProductManagement.Client.Generated.OrganizationReference organizationReference, Cbis.ProductManagement.Client.Generated.ReferenceName referenceName) {
+            base.Channel.ActiveProduct(organizationReference, referenceName);
+        }
+        
+        public System.Threading.Tasks.Task ActiveProductAsync(Cbis.ProductManagement.Client.Generated.OrganizationReference organizationReference, Cbis.ProductManagement.Client.Generated.ReferenceName referenceName) {
+            return base.Channel.ActiveProductAsync(organizationReference, referenceName);
         }
     }
 }
