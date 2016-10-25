@@ -81,6 +81,7 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="Cbis.ProductManagement.Client.nuspec" />
     <None Include="Service References\Generated\Cbis.ProductManagement.Client.Generated.Category.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -111,28 +112,28 @@
     <None Include="Service References\Generated\configuration.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\Generated\InformationSystemManagement.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\Generated\InformationSystemManagement1.xsd">
-      <SubType>Designer</SubType>
-    </None>
+    <None Include="Service References\Generated\InformationSystemManagement.wsdl" />
+    <None Include="Service References\Generated\InformationSystemManagement1.wsdl" />
     <None Include="Service References\Generated\InformationSystemManagement12.wsdl" />
-    <None Include="Service References\Generated\InformationSystemManagement2.wsdl" />
-    <None Include="Service References\Generated\InformationSystemManagement2.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\Generated\InformationSystemManagement21.wsdl" />
-    <None Include="Service References\Generated\InformationSystemManagement3.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\Generated\InformationSystemManagement4.xsd">
-      <SubType>Designer</SubType>
-    </None>
     <None Include="Service References\Generated\InformationSystemManagement41.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\Generated\InformationSystemManagement5.xsd">
+    <None Include="Service References\Generated\InformationSystemManagement6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Generated\InformationSystemManagement61.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Generated\InformationSystemManagement62.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Generated\InformationSystemManagement63.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Generated\InformationSystemManagement64.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Generated\InformationSystemManagement65.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\Generated\Reference.svcmap">
@@ -141,7 +142,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\Generated\InformationSystemManagement1.disco" />
+    <None Include="Service References\Generated\InformationSystemManagement.disco" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
